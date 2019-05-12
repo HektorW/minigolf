@@ -1,0 +1,172 @@
+@import '../../../styles/variables';
+
+.tables-viewer {
+  $row-height: 55px;
+
+  margin: 0 auto;
+
+  &__title {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  &__table {
+    &,
+    thead,
+    tbody {
+      display: block;
+    }
+
+    thead {
+      background-color: $color-black;
+      color: $color-white;
+      font-size: 10px;
+      text-align: left;
+    }
+
+    tr {
+      display: flex;
+    }
+
+    th,
+    td {
+      align-items: center;
+      display: flex;
+      height: $row-height;
+      justify-content: center;
+      padding: 0 0.5rem;
+      width: 60px;
+
+      &:nth-child(2) {
+        flex: 1;
+        justify-content: flex-start;
+      }
+
+      &:nth-child(n + 3):nth-child(-n + 9),
+      &:nth-child(11) {
+        display: none;
+      }
+    }
+
+    th {
+      font-weight: $font-weight-normal;
+
+      &:first-child {
+        font-size: 0;
+
+        &::before {
+          content: '#';
+          font-size: 1rem;
+        }
+      }
+    }
+
+    td {
+      &:nth-child(1),
+      &:nth-child(10) {
+        font-weight: bold;
+      }
+
+      &:nth-child(2) {
+        justify-content: space-between;
+
+        &::after {
+          background-color: $color-ececec;
+          content: '';
+          height: 70%;
+          margin: 0 -0.5rem 0 0.5rem;
+          width: 1px;
+        }
+      }
+    }
+
+    &-row {
+      &:nth-child(even) {
+        background-color: $color-f9f9f9;
+      }
+
+      &:nth-child(1),
+      &:nth-last-child(1),
+      &:nth-last-child(2),
+      &:nth-last-child(3) {
+        position: relative;
+
+        &::before {
+          content: '';
+          height: 100%;
+          position: absolute;
+          width: 3px;
+        }
+      }
+
+      &:nth-child(1)::before {
+        background-color: $color-gold;
+      }
+
+      &:nth-last-child(1)::before {
+        background-color: $color-red;
+      }
+
+      &:nth-last-child(2)::before {
+        background-color: $color-red-lighter;
+      }
+
+      &:nth-last-child(3)::before {
+        background-color: $color-red-lightest;
+      }
+
+      &--is-own {
+        background-image: linear-gradient(35deg, $color-gold-shiny, $color-red);
+        // background-color: $color-gold-shiny !important;
+        color: $color-white;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoints-small) {
+    &__title {
+      width: 50%;
+    }
+
+    &__table {
+      th,
+      td {
+        &:nth-child(n + 3):nth-child(-n + 5) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoints-medium) {
+    &__table {
+      th,
+      td {
+        &:nth-child(n + 3):nth-child(-n + 9),
+        &:nth-child(11) {
+          display: flex;
+        }
+
+        &:nth-child(n + 3):nth-child(-n + 6) {
+          width: 80px;
+        }
+
+        &:nth-child(n + 7):nth-child(-n + 9) {
+          width: 50px;
+        }
+
+        &:nth-child(11) {
+          justify-content: flex-start;
+          width: 140px;
+        }
+      }
+
+      th {
+        height: 60px;
+      }
+    }
+  }
+}

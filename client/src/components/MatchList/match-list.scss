@@ -1,0 +1,60 @@
+@import '../../styles/variables.scss';
+
+.match-list {
+  list-style: none;
+  padding: 0;
+
+  &__match {
+    background-color: $color-f9f9f9;
+    margin: 1rem auto;
+    padding: 1rem;
+
+    &-date {
+      &-weekday,
+      &-month {
+        font-size: 0.8em;
+      }
+
+      &-date {
+        font-weight: bold;
+      }
+    }
+
+    &-time {
+      display: block;
+      font-size: 0.9em;
+    }
+
+    &-teams,
+    &-result {
+      display: flex;
+    }
+
+    &-teams {
+      font-size: 1.2rem;
+      justify-content: space-between;
+      margin-top: 1rem;
+      max-width: 350px;
+    }
+
+    &-team {
+      &-a,
+      &-b {
+        flex: 1;
+      }
+
+      &-divider {
+        flex: 0 0 20px;
+      }
+
+      &-b {
+        text-align: right;
+      }
+    }
+
+    &-result {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+}

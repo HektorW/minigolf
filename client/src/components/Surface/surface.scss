@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.surface {
+  background-color: $color-white;
+  box-shadow: 0 3px 6px rgba($color-navy, 0.2);
+
+  &--with-padding {
+    padding: 2rem;
+  }
+}

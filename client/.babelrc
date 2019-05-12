@@ -1,0 +1,28 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "useBuiltIns": false,
+        "targets": {
+          "browsers": ["> 2%"]
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-syntax-dynamic-import",
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"],
+      "plugins": ["transform-react-remove-prop-types"]
+    }
+  }
+}

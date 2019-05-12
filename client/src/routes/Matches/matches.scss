@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+
+.matches {
+  &__surface {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: $breakpoints-medium) {
+    &__content {
+      display: flex;
+    }
+
+    &__surface {
+      align-self: flex-start;
+      flex: 1;
+      position: sticky;
+      top: 1rem;
+
+      &:not(:first-child) {
+        margin-right: 2rem;
+        margin-top: 0;
+        order: -1;
+      }
+    }
+  }
+}

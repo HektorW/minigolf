@@ -1,0 +1,35 @@
+@import '../../../styles/variables';
+
+.next-match {
+  display: inline-block;
+  margin: 4em 0 0;
+  padding: 2rem;
+  text-align: center;
+
+  &__heading {
+    // font-family: $font-family-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__opposition {
+    &-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  &__date,
+  &__time {
+    font-size: 24px;
+  }
+
+  &__date {
+    margin: 0.5em 0;
+
+    &-date {
+      font-weight: $font-weight-bold;
+      margin: 0 0.25em;
+    }
+  }
+}
